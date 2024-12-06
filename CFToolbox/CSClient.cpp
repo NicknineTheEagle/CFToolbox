@@ -2438,7 +2438,7 @@ int applyUpdate(char * updatePath, char * gcfPath, char * commonName, char * dec
 	return 0;	
 }
 
-int downloadApp(char * host, int port, RegistryVector * cdrVector, DWORD requestedAppId, char * root, char * ticket,int ticketLen, char*appName,int desiredLevel,char * contentServerURL,char * taskName,DWORD * taskProgress,DWORD * remainingTime,int * pleaseStop,int securedUpdates,bool showRealBandwidth,bool validate)
+int downloadApp(char * host, int port, RegistryVector * cdrVector, DWORD requestedAppId, DWORD requestedAppVer, char * root, char * ticket,int ticketLen, char*appName,int desiredLevel,char * contentServerURL,char * taskName,DWORD * taskProgress,DWORD * remainingTime,int * pleaseStop,int securedUpdates,bool showRealBandwidth,bool validate)
 {
 	if (*pleaseStop) return 2;
 	if (taskName && taskProgress)
@@ -2473,6 +2473,9 @@ int downloadApp(char * host, int port, RegistryVector * cdrVector, DWORD request
 		DWORD primaryCache=atoi(vector->getNode("primarycache")->getStringValue());
 		app=getCDRApp(cdr,primaryCache);
 	}
+
+	app.currentVersionId=requestedAppVer;
+
 //// for tests
 //	app.currentVersionId=0;
 /// end for tests

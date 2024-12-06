@@ -1,5 +1,5 @@
 //{{NO_DEPENDENCIES}}
-// Microsoft Developer Studio generated include file.
+// Microsoft Visual C++ generated include file.
 // Used by CFToolbox.rc
 //
 #define IDM_ABOUTBOX                    0x0010
@@ -149,13 +149,16 @@
 #define ID_ROOT_PAUSE_                  32793
 #define ID_ROOT_MINI                    32794
 #define ID_ROOT_SELECT                  32795
+#define ID_ROOT_SELECTVERSION           32796
+#define ID_ROOT_CHANGEVERSION           32797
+#define ID_ROOT_RESETVERSIONS           32798
 
 // Next default values for new objects
 // 
 #ifdef APSTUDIO_INVOKED
 #ifndef APSTUDIO_READONLY_SYMBOLS
 #define _APS_NEXT_RESOURCE_VALUE        164
-#define _APS_NEXT_COMMAND_VALUE         32796
+#define _APS_NEXT_COMMAND_VALUE         32799
 #define _APS_NEXT_CONTROL_VALUE         1077
 #define _APS_NEXT_SYMED_VALUE           101
 #endif

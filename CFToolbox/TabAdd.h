@@ -2,6 +2,7 @@
 #define AFX_TABADD_H__254BEA28_BA2B_436F_AABD_4CED5AD31574__INCLUDED_
 
 #include "HashMap.h"
+#include "cdr.h"
 
 #if _MSC_VER > 1000
 #pragma once
@@ -20,8 +21,10 @@ public:
 	BOOL PreTranslateMessage(MSG* pMsg) ;
 	void refreshAccounts();
 	void refreshTab();
+	void fillListValues(const CDRApp& app, char** values);
 	HashMapDword * notDownloadedApps;
 	HashMapDword * selectedFiles;
+	HashMapDword * selectedVersions;
  void OnAppClicked( );
 // Dialog Data
 	//{{AFX_DATA(CTabAdd)

@@ -162,7 +162,7 @@ if (isAddEnabled())
 			//	DWORD cfId=m_filesCtrl.GetItemData(m_filesCtrl.GetSelectionMark()); // for single selection
 			int index = m_filesCtrl.GetNextSelectedItem(pos);
 			DWORD appId=m_filesCtrl.GetItemData(index);
-			cfManager->downloadNew(appId,"",1);
+			cfManager->downloadNew(appId,"",1,(int)selectedVersions->get(appId) - 1);
 		}
 	}
 #endif
@@ -212,6 +212,22 @@ if (isAddEnabled())
 }
 
 }
+
+void CTabAdd::fillListValues(const CDRApp &app, char **values)
+{
+	static char name[1000];
+	sprintf(name, "%s.%s", app.installDirName, (app.appOfManifestOnlyCache ? "ncf" : "gcf"));
+	strlwr(name);
+	values[0] = name;
+	static char size[50];
+	renderSize(app.maxCacheFileSizeMb * 1024 * 1024, size, false);
+	values[1] = size;
+	static char version[50];
+	int selectedVersion = (int)selectedVersions->get(app.appId);
+	sprintf(version, "%d", selectedVersion ? selectedVersion - 1 : app.currentVersionId);
+	values[2] = version;
+}
+
 void CTabAdd::refreshTab()
 {
  if (isAddEnabled())
@@ -247,17 +263,7 @@ void CTabAdd::refreshTab()
 				{
 					notDownloadedFiles->put(app.appId,(void*)1);
 					char * values[3];
-					char name[1000];
-					sprintf(name,"%s.%s",app.installDirName,(app.appOfManifestOnlyCache ? "ncf" : "gcf"));
-					strlwr(name);
-					values[0]=name;
-					char size[50];
-					renderSize(app.maxCacheFileSizeMb*1024*1024,size,false);
-					values[1]=size;	
-					char version[50];
-					sprintf(version,"%d",app.currentVersionId);
-					values[2]=version;	
-					
+					fillListValues(app, values);
 					insertListValue(&m_filesCtrl, app.appId, values,3 ,-1);
 				}
 			}
@@ -371,6 +377,7 @@ BOOL CTabAdd::OnInitDialog()
 	CDialog::OnInitDialog();
 
 	notDownloadedApps=new HashMapDword(HASHMAP_DELETE);
+	selectedVersions= new HashMapDword(HASHMAP_DELETE);
 	char * cfnames[3]={"File","Size","Version"};
 	int cfwidths[3]={300,100,60};
 	buildListColumns(&m_filesCtrl,cfnames,cfwidths,3);
@@ -839,7 +846,28 @@ void CTabAdd::OnFileContextualMenu(NMHDR* pNMHDR, LRESULT* pResult)
 						}
 					}
 					break;
-				}		 	
+				}
+			case (ID_ROOT_CHANGEVERSION):
+			{
+				CQuestionPopup question;
+				question.m_question.Format("Specify %s version to download:", m_filesCtrl.GetItemText(index, 0));
+				question.m_value = "";
+				int nResponse = question.DoModal();
+				if (nResponse == IDOK && question.m_value.GetLength() && descriptor)
+				{
+					selectedVersions->put(descriptor->fileId, (void *)(atoi(question.m_value)+1));
+					char *values[3];
+					fillListValues(app, values);
+					updateListValue(&m_filesCtrl, index, values, 3);
+				}
+				break;
+			}
+			case (ID_ROOT_RESETVERSIONS):
+			{
+				selectedVersions->clear();
+				refreshTab();
+				break;
+			}
 			case (ID_ROOT_PROPERTIES):
 				{			
 					if (tabFiles->properties)

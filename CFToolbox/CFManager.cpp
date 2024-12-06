@@ -879,7 +879,7 @@ void CCFManager::download(DWORD cfId, char* ticket, int ticketLen,bool correct)
 {
 	CCFDescriptor * descriptor=(CCFDescriptor *)files->get(cfId);
 		
-	CTask * downloader= new CCFDownloader(descriptor,ticket, ticketLen,correct,false);
+	CTask * downloader= new CCFDownloader(descriptor,descriptor->cdrVersion,ticket, ticketLen,correct,false);
 	downloader->taskFile=(char*)malloc(strlen(descriptor->fileName)+1);
 	downloader->taskName=(char*)malloc(200);
 	strcpy(downloader->taskFile,descriptor->fileName);
@@ -887,7 +887,7 @@ void CCFManager::download(DWORD cfId, char* ticket, int ticketLen,bool correct)
 	getTaskManager()->addAndStartTask(downloader);	
 
 }
-void CCFManager::downloadNew(DWORD cfId, char* ticket, int ticketLen )
+void CCFManager::downloadNew(DWORD cfId, char* ticket, int ticketLen, int version)
 {
 	//CCFDescriptor * descriptor=(CCFDescriptor *)files->get(cfId);
 	SteamNetwork network;
@@ -896,11 +896,12 @@ void CCFManager::downloadNew(DWORD cfId, char* ticket, int ticketLen )
 	CDRApp app=getCDRApp(cdr,cfId);
 	if (!app.node) return;
 	CCFDescriptor * descriptor=new CCFDescriptor(cdr,app,conf.getSteamAppsPath(),conf.isAccurateNcfCompletion());
+	if (version>=0) descriptor->fileVersion=version;
 	getCFManager()->files->put(descriptor->fileId,descriptor);
 	getTabFiles()->insertFile(descriptor);
 
 
-	CTask * downloader= new CCFDownloader(descriptor,ticket, ticketLen,false,true);
+	CTask * downloader= new CCFDownloader(descriptor,descriptor->fileVersion,ticket, ticketLen,false,true);
 	downloader->taskFile=(char*)malloc(strlen(descriptor->fileName)+1);
 	downloader->taskName=(char*)malloc(200);
 	strcpy(downloader->taskFile,descriptor->fileName);

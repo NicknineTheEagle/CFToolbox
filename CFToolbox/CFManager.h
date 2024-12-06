@@ -30,7 +30,7 @@ public:
 	void executePlugin(CPlugin * plugin, CCFDescriptor * desc);
 	void executePlugin(CPlugin * plugin, CAppDescriptor * desc );
 	void download(DWORD cfId, char* ticket, int ticketLen,bool correct);
-	void downloadNew(DWORD cfId, char* ticket, int ticketLen);
+	void downloadNew(DWORD cfId, char* ticket, int ticketLen, int version = -1);
 	bool deleteFile(DWORD cfId);
 	void createMiniCF(DWORD id, char * outPath);
 	void cancelTask(DWORD id);
@@ -68,16 +68,18 @@ class CCFDownloader : public CTask
 	int ticketLen;
 	bool correct;	
 	bool isNewFile;
+	int appVersion;
 	
 	public : 
 	char contentServerURL[1000];
 	DWORD remainingTime;	
-	CCFDownloader(CCFDescriptor * _descriptor, char * _ticket, int _ticketLen, bool _correct,bool _isNewFile ) : CTask ()
+	CCFDownloader(CCFDescriptor * _descriptor, int version, char * _ticket, int _ticketLen, bool _correct,bool _isNewFile ) : CTask ()
 	{
 		*contentServerURL=0;
 		descriptor=_descriptor;
 		descriptor->runningTask=this;
 		cfId=descriptor->fileId;
+		appVersion=version;
 		strcpy(descriptor->information,"");
 		ticket=(char*)malloc(_ticketLen);
 		memcpy(ticket,_ticket,_ticketLen);
@@ -145,7 +147,7 @@ class CCFDownloader : public CTask
 				ConfigManager conf;
 				SteamNetwork network;
  				strcpy( taskName,"Downloading");
-				int res=downloadApp(network.getConfigServer(),network.getConfigServerPort(),network.getContentDescriptionRecord(),cfId,conf.getSteamAppsPath(),ticket,ticketLen,descriptor->fileName, 0,contentServerURL,taskName,&taskProgress,&remainingTime,&pleaseStop,conf.isSecuredGCFUpdates(),conf.isShowBandwidthUsage(),conf.isValidateDownloads());
+				int res=downloadApp(network.getConfigServer(),network.getConfigServerPort(),network.getContentDescriptionRecord(),cfId,appVersion,conf.getSteamAppsPath(),ticket,ticketLen,descriptor->fileName, 0,contentServerURL,taskName,&taskProgress,&remainingTime,&pleaseStop,conf.isSecuredGCFUpdates(),conf.isShowBandwidthUsage(),conf.isValidateDownloads());
 				
 				switch (res)
 				{

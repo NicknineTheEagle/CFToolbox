@@ -4,7 +4,7 @@
 #include "cdr.h"
 #include "gcf.h"
 
-int downloadApp(char * host, int port, RegistryVector * cdrVector, DWORD requestedAppId, char * root, char * ticket,int ticketLen, char*appName,int desiredLogLevel,char * contentServerURL,char * taskName,DWORD * taskProgress,DWORD * remainingTime,int * pleaseStop,int securedUpdates,bool showRealBandwidth,bool validate);
+int downloadApp(char * host, int port, RegistryVector * cdrVector, DWORD requestedAppId, DWORD requestedAppVer, char * root, char * ticket,int ticketLen, char*appName,int desiredLogLevel,char * contentServerURL,char * taskName,DWORD * taskProgress,DWORD * remainingTime,int * pleaseStop,int securedUpdates,bool showRealBandwidth,bool validate);
 int createGcfFile(GCF * gcf, char * root, char * gcfName, char * extractionName, char *appName, int desiredLevel);
 
 int createArchive(char * gcfPath,char * archivePath, char * appName, int desiredLevel,char * taskName,DWORD * taskProgress);
