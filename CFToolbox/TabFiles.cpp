@@ -520,7 +520,12 @@ void CTabFiles::OnContextualMenu(NMHDR* pNMHDR, LRESULT* pResult)
 					}
 					else 
 					{
+#if 0
 						MessageBox("No account configured","CF Toolbox",MB_ICONERROR|MB_OK);
+#else
+						// TEMP
+						manager->download(cfId, "", 1,conf.isCorrectBeforeArchiveUpdateCreation());
+#endif
 					}
 					break;
 				}

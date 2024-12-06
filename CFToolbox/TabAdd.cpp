@@ -151,6 +151,21 @@ if (isAddEnabled())
 			}
 		}
 	}
+#if 1
+	// TEMP
+	else
+	{
+		POSITION pos = m_filesCtrl.GetFirstSelectedItemPosition();
+				
+		while(pos)
+		{
+			//	DWORD cfId=m_filesCtrl.GetItemData(m_filesCtrl.GetSelectionMark()); // for single selection
+			int index = m_filesCtrl.GetNextSelectedItem(pos);
+			DWORD appId=m_filesCtrl.GetItemData(index);
+			cfManager->downloadNew(appId,"",1);
+		}
+	}
+#endif
  
 	refreshTab();
 }
@@ -186,10 +201,14 @@ if (isAddEnabled())
 	if (indexA<0) indexA=0;
 	m_accountsCtrl.SetCurSel(indexA);
 	
+#if 0
 	if (m_accountsCtrl.GetCount()) 
 		m_downloadCtrl.EnableWindow(true);
 	else
 		m_downloadCtrl.EnableWindow(false);
+#else
+	m_downloadCtrl.EnableWindow(true);
+#endif
 }
 
 }
