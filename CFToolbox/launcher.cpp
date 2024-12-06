@@ -532,14 +532,14 @@ bool buildAppCommandLine(char * commandLine, char * commandLineTemplate,DWORD ap
 	}
 	applyTemplate(commandLine,"{files_ids}",v);
  	*v=0;
-	for (ind=0;ind<desc->appGcfIdsCount;ind++)
+	for (int ind=0;ind<desc->appGcfIdsCount;ind++)
 	{
 		sprintf(temp,"\"%s\" ",desc->appGcfNames[ind]);
 		strcat(v,temp);
 	}	
 	applyTemplate(commandLine,"{files_names}",v);
 	*v=0;
-	for (ind=0;ind<desc->appGcfIdsCount;ind++)
+	for (int ind=0;ind<desc->appGcfIdsCount;ind++)
 	{
 		sprintf(temp,"\"%s\\%s\" ",conf.getSteamAppsPath(),desc->appGcfNames[ind]);
 		strcat(v,temp);

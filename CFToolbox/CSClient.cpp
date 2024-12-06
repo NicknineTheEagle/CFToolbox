@@ -1519,7 +1519,7 @@ int updateVersionGcf(char * root, char * commonName,GCF * localVersion,GCF * new
 		
 		if (reusedBlocks)
 		{// shift first data blocks
-			for (ind=0;ind<localVersion->blocks->blockCount;ind++)
+			for (int ind=0;ind<localVersion->blocks->blockCount;ind++)
 			{
 				DWORD newIndex=localVersion->blocks->block[ind].firstDataBlockIndex;
 				
@@ -1533,7 +1533,7 @@ int updateVersionGcf(char * root, char * commonName,GCF * localVersion,GCF * new
 				localVersion->blocks->block[ind].firstDataBlockIndex=newIndex;
 			}
 			// shift frag map 
-			for (ind=0;ind<reusedBlocks;ind++)
+			for (int ind=0;ind<reusedBlocks;ind++)
 			{
 				DWORD newFrom=ind;
 				DWORD newTo=oldFragMap[ind];
@@ -2247,7 +2247,7 @@ int createUpdateFile(char * archivePath, char * gcfPath,char * commonName, char 
  
 	DWORD dataSize=0;
 	DWORD clustersCount=0;
-	for (ind=0;ind<gcf->directory->itemCount;ind++)
+	for (int ind=0;ind<gcf->directory->itemCount;ind++)
 	{	
 		if (isUpdated(gcf,ind,updated,nbUpdated))
 		{

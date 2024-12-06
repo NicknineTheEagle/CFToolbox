@@ -669,7 +669,7 @@ void CTabFiles::OnContextualMenu(NMHDR* pNMHDR, LRESULT* pResult)
 					free(list);
 					return;
 				}
-				for (ind=0;ind<size;ind++)
+				for (int ind=0;ind<size;ind++)
 				{
 					if(manager->deleteFile(list[ind]))
 						removeFile(list[ind]);

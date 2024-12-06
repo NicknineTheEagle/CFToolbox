@@ -105,7 +105,7 @@ CAppDescriptor::CAppDescriptor(ContentDescriptionRecord cdr,CDRApp app, HashMapD
 	realSize=0;
 	appGcfNames=(char**)malloc(sizeof(char*)*appGcfIdsCount);
 	appGcfSizes=(DWORD*)malloc(4*appGcfIdsCount);
-	for (  ind=0;ind<appGcfIdsCount;ind++)
+	for (int ind=0;ind<appGcfIdsCount;ind++)
 	{
 		CCFDescriptor * desc=(CCFDescriptor *)files->get(appGcfIds[ind]);
 		

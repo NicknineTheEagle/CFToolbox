@@ -180,7 +180,7 @@ int getContentServers(char * host, int port, sockaddr_in * addrs, int maxi)
 	
 	// connect to server and get real adresses
 	int nbRead=0;
-	for (ind=0;ind<toRead;ind++)
+	for (int ind=0;ind<toRead;ind++)
 	{
 		nbRead+=getContentServersIps(raddrs[ind],addrs+nbRead,maxi-nbRead);
 	 
@@ -731,7 +731,7 @@ int patchContentDescriptionRecord()
 
 			// packs
 		 	RegistryVector * packs=root->getNode(2)->getVectorValue();
-			RegistryNode * steamPack=packs->getNode((int)0);
+			RegistryNode * steamPack=packs->getNode((DWORD)0);
 			RegistryVector * allowedApps=steamPack->getVectorValue()->getNode(6)->getVectorValue();
 			allowedApps->clear();
 				
@@ -1204,7 +1204,7 @@ int getContentServers(char * host, int port, sockaddr_in * addrs, int maxi, int 
 		
 		// connect to server and get real adresses
 		int nbRead=0;
-		for (ind=0;ind<toRead;ind++)
+		for (int ind=0;ind<toRead;ind++)
 		{
 			nbRead+=getContentServersIps(raddrs[ind],addrs+nbRead,maxi-nbRead,appId,version);
 			if (nbRead>=maxi) return nbRead;

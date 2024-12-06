@@ -5,10 +5,10 @@
 #include "afxsock.h"
 
 
-#define INADDR_ANY              (u_long)0x00000000
-#define INADDR_LOOPBACK         0x7f000001
-#define INADDR_BROADCAST        (u_long)0xffffffff
-#define INADDR_NONE             0xffffffff
+//#define INADDR_ANY              (u_long)0x00000000
+//#define INADDR_LOOPBACK         0x7f000001
+//#define INADDR_BROADCAST        (u_long)0xffffffff
+//#define INADDR_NONE             0xffffffff
 
 #define ADDR_ANY                INADDR_ANY
 int hexa2Buffer(unsigned char * buffer, char * hexa);

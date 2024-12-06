@@ -208,7 +208,7 @@ void CTaskManager::_stopAllTasks(int nowait)
  
 	nbTasks=tasks->getDWordKeys(keys);
  
-	for (  ind=0;ind<nbTasks;ind++)
+	for (int ind=0;ind<nbTasks;ind++)
 	{
 		CTask * task=(CTask *)keys[ind];
  
@@ -309,7 +309,7 @@ void CTaskManager::refreshDisplay()
 		nb++;
 	}
 
-	for (  ind=0;ind<nb;ind++)
+	for (int ind=0;ind<nb;ind++)
 	{
 		refreshDisplay(tasks[ind]);
 	}

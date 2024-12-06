@@ -199,7 +199,7 @@ int initDebug(char * newLogFile, CEdit * control )
 	logControl=control;
 	if (newLogFile)
 	{
-		logFile=fopen(newLogFile,"aw");
+		logFile=fopen(newLogFile,"a");
 		return !logFile;
 	}
 	logFile=0;
@@ -216,7 +216,7 @@ int initDebug(char * newLogFile,int logStdout)
 	logStdOut=logStdout;
 	if (newLogFile)
 	{
-		logFile=fopen(newLogFile,"aw");
+		logFile=fopen(newLogFile,"a");
 		return !logFile;
 	}
 	logFile=0;

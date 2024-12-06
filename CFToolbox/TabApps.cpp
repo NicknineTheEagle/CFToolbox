@@ -450,7 +450,7 @@ break;
 						char sizeV[50];
 						char version[50];
 						char completion[50];
-						for ( ind=0;ind<appDescriptor->appGcfIdsCount;ind++)
+						for (int ind=0;ind<appDescriptor->appGcfIdsCount;ind++)
 						{
 							
 							char *p[4];
@@ -718,7 +718,7 @@ break;
 			int nbFiles=filesToDelete->size();
 			DWORD *fileIds=(DWORD*)malloc(4*nbFiles);
 			nbFiles=filesToDelete->getDWordKeys(fileIds);
-			for (ind=0;ind<nbFiles;ind++)
+			for (int ind=0;ind<nbFiles;ind++)
 			{	
 			DWORD nbToDelete=(DWORD)filesToDelete->get(fileIds[ind]);
 			DWORD nbUsed=(DWORD)toDeleteFilesUsage->get(fileIds[ind]);

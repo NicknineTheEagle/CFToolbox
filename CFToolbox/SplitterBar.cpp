@@ -64,7 +64,7 @@ void CSplitterBar::OnPaint()
 	EndPaint(&paint);
 }
 
-UINT CSplitterBar::OnNcHitTest(CPoint point) 
+LRESULT CSplitterBar::OnNcHitTest(CPoint point) 
 {	
 	return HTCLIENT;
 }

@@ -60,7 +60,7 @@ void configureLanguages(CComboBox * combo,char * language)
 	{
 		combo->AddString(supportedLanguages[ind]);combo->SetItemData(combo->FindStringExact(0,supportedLanguages[ind]),(DWORD)supportedLanguagesCodes[ind]);
 	}
-	for (ind=0;ind<combo->GetCount();ind++)
+	for (int ind=0;ind<combo->GetCount();ind++)
 	{
 		char * elt=(char*)combo->GetItemData(ind);
 		

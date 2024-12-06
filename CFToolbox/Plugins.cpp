@@ -165,7 +165,8 @@ int getInsertPos(HMENU menu,char * item)
 {
 	int nb=GetMenuItemCount(menu);
 	char str[200];
-	for (int pos=0;pos<nb;pos++)
+	int pos;
+	for (pos=0;pos<nb;pos++)
 	{
 		GetMenuString(menu,pos,str,200,MF_BYPOSITION);
 		if (stricmp(str,item)>=0) return pos;

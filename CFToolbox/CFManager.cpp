@@ -1079,7 +1079,7 @@ void CCFManager::buildApps(ContentDescriptionRecord cdr)
 
 					}
 
-					for (i=0;i<appGcfIdsCount;i++)
+					for (int i=0;i<appGcfIdsCount;i++)
 					{
 						if (appGcfIds[i]!=WINUI_ID && appGcfIds[i]!=MEDIAPLAYER_ID && files->get(appGcfIds[i]))
 						{// if at least one gcf found , app is visible

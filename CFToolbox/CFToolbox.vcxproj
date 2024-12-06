@@ -1,0 +1,314 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="12.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <SccProjectName />
+    <SccLocalPath />
+    <Keyword>MFCProj</Keyword>
+    <ProjectGuid>{8533CD1F-6697-43B4-8316-9D53FC9510D2}</ProjectGuid>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <PlatformToolset>v120_xp</PlatformToolset>
+    <UseOfMfc>Dynamic</UseOfMfc>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <PlatformToolset>v120_xp</PlatformToolset>
+    <UseOfMfc>Dynamic</UseOfMfc>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+    <Import Project="$(VCTargetsPath)Microsoft.Cpp.UpgradeFromVC60.props" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+    <Import Project="$(VCTargetsPath)Microsoft.Cpp.UpgradeFromVC60.props" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <OutDir>.\Release\</OutDir>
+    <IntDir>.\Release\</IntDir>
+    <LinkIncremental>false</LinkIncremental>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <OutDir>.\Debug\</OutDir>
+    <IntDir>.\Debug\</IntDir>
+    <LinkIncremental>true</LinkIncremental>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <InlineFunctionExpansion>Default</InlineFunctionExpansion>
+      <StringPooling>true</StringPooling>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <Optimization>MaxSpeed</Optimization>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <WarningLevel>TurnOffAllWarnings</WarningLevel>
+      <PreprocessorDefinitions>WIN32;NDEBUG;_WINDOWS;_CRT_SECURE_NO_WARNINGS;NO_WARN_MBCS_MFC_DEPRECATION;_WIN32_WINNT=0x0502;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AssemblerListingLocation>.\Release\</AssemblerListingLocation>
+      <BrowseInformation>true</BrowseInformation>
+      <PrecompiledHeaderOutputFile>.\Release\CFToolbox.pch</PrecompiledHeaderOutputFile>
+      <PrecompiledHeader />
+      <ObjectFileName>.\Release\</ObjectFileName>
+      <ProgramDataBaseFileName>.\Release\</ProgramDataBaseFileName>
+    </ClCompile>
+    <Midl>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <PreprocessorDefinitions>NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <TypeLibraryName>.\Release\CFToolbox.tlb</TypeLibraryName>
+      <MkTypLibCompatible>true</MkTypLibCompatible>
+      <TargetEnvironment>Win32</TargetEnvironment>
+    </Midl>
+    <ResourceCompile>
+      <Culture>0x040c</Culture>
+      <PreprocessorDefinitions>NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </ResourceCompile>
+    <Bscmake>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <OutputFile>.\Release\CFToolbox.bsc</OutputFile>
+    </Bscmake>
+    <Link>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <SubSystem>Windows</SubSystem>
+      <OutputFile>.\Release\CFToolbox.exe</OutputFile>
+      <AdditionalDependencies>CFToolbox.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
+      <InlineFunctionExpansion>Default</InlineFunctionExpansion>
+      <FunctionLevelLinking>false</FunctionLevelLinking>
+      <Optimization>Disabled</Optimization>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <WarningLevel>Level3</WarningLevel>
+      <MinimalRebuild>true</MinimalRebuild>
+      <DebugInformationFormat>EditAndContinue</DebugInformationFormat>
+      <PreprocessorDefinitions>WIN32;_DEBUG;_WINDOWS;_CRT_SECURE_NO_WARNINGS;NO_WARN_MBCS_MFC_DEPRECATION;_WIN32_WINNT=0x0502;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AssemblerListingLocation>.\Debug\</AssemblerListingLocation>
+      <PrecompiledHeaderOutputFile>.\Debug\CFToolbox.pch</PrecompiledHeaderOutputFile>
+      <PrecompiledHeader />
+      <ObjectFileName>.\Debug\</ObjectFileName>
+      <ProgramDataBaseFileName>.\Debug\</ProgramDataBaseFileName>
+      <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
+    </ClCompile>
+    <Midl>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <PreprocessorDefinitions>_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <TypeLibraryName>.\Debug\CFToolbox.tlb</TypeLibraryName>
+      <MkTypLibCompatible>true</MkTypLibCompatible>
+      <TargetEnvironment>Win32</TargetEnvironment>
+    </Midl>
+    <ResourceCompile>
+      <Culture>0x040c</Culture>
+      <PreprocessorDefinitions>_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </ResourceCompile>
+    <Bscmake>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <OutputFile>.\Debug\CFToolbox.bsc</OutputFile>
+    </Bscmake>
+    <Link>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <SubSystem>Windows</SubSystem>
+      <OutputFile>.\Debug\CFToolbox.exe</OutputFile>
+      <AdditionalDependencies>CFToolbox.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <ImageHasSafeExceptionHandlers>false</ImageHasSafeExceptionHandlers>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClCompile Include="Account.cpp" />
+    <ClCompile Include="Accounts.cpp" />
+    <ClCompile Include="AppDescriptor.cpp" />
+    <ClCompile Include="AppIcons.cpp" />
+    <ClCompile Include="AppPropertiesPopup.cpp" />
+    <ClCompile Include="Bandwidth.cpp" />
+    <ClCompile Include="cdr.cpp" />
+    <ClCompile Include="CFDescriptor.cpp" />
+    <ClCompile Include="CFManager.cpp" />
+    <ClCompile Include="CFTBTabCtrl.cpp" />
+    <ClCompile Include="CFToolbox.cpp" />
+    <ClCompile Include="CFToolboxDlg.cpp" />
+    <ClCompile Include="ChooseAccount.cpp" />
+    <ClCompile Include="ConfigManager.cpp" />
+    <ClCompile Include="crypto.cpp" />
+    <ClCompile Include="CSClient.cpp" />
+    <ClCompile Include="Debug.cpp" />
+    <ClCompile Include="dictionary.cpp" />
+    <ClCompile Include="Download.cpp" />
+    <ClCompile Include="DownloadManager.cpp" />
+    <ClCompile Include="EnterPasswordDlg.cpp" />
+    <ClCompile Include="ExecutionAnalyser.cpp" />
+    <ClCompile Include="gcf.cpp" />
+    <ClCompile Include="HashMap.cpp" />
+    <ClCompile Include="HashMapStr.cpp" />
+    <ClCompile Include="HistogramCtrl.cpp" />
+    <ClCompile Include="iniparser.cpp" />
+    <ClCompile Include="LargeFile.cpp" />
+    <ClCompile Include="launcher.cpp" />
+    <ClCompile Include="Plugins.cpp" />
+    <ClCompile Include="ProgressPopup.cpp" />
+    <ClCompile Include="PropertiesPopup.cpp" />
+    <ClCompile Include="QuestionPopup.cpp" />
+    <ClCompile Include="Registry.cpp" />
+    <ClCompile Include="RegistryKey.cpp" />
+    <ClCompile Include="RegistryNode.cpp" />
+    <ClCompile Include="RegistryValue.cpp" />
+    <ClCompile Include="RegistryVector.cpp" />
+    <ClCompile Include="Rijndael.cpp" />
+    <ClCompile Include="ServerRegistry.cpp" />
+    <ClCompile Include="SHA1.cpp" />
+    <ClCompile Include="socketTools.cpp" />
+    <ClCompile Include="SplitterBar.cpp" />
+    <ClCompile Include="StdAfx.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Create</PrecompiledHeader>
+      <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">stdafx.h</PrecompiledHeaderFile>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
+      <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">stdafx.h</PrecompiledHeaderFile>
+    </ClCompile>
+    <ClCompile Include="steamClient.cpp" />
+    <ClCompile Include="SteamNetwork.cpp" />
+    <ClCompile Include="strlib.cpp" />
+    <ClCompile Include="TabAdd.cpp" />
+    <ClCompile Include="TabApps.cpp" />
+    <ClCompile Include="TabBandwidth.cpp" />
+    <ClCompile Include="TabFiles.cpp" />
+    <ClCompile Include="TabHelp.cpp" />
+    <ClCompile Include="TabLogs.cpp" />
+    <ClCompile Include="TabPreferences.cpp" />
+    <ClCompile Include="Task.cpp" />
+    <ClCompile Include="TaskManager.cpp" />
+    <ClCompile Include="tga.cpp" />
+    <ClCompile Include="Tools.cpp" />
+    <ClCompile Include="webbrowser2.cpp" />
+    <ClCompile Include="zlib\adler32.c" />
+    <ClCompile Include="zlib\compress.c" />
+    <ClCompile Include="zlib\crc32.c" />
+    <ClCompile Include="zlib\deflate.c" />
+    <ClCompile Include="zlib\gzio.c" />
+    <ClCompile Include="zlib\infback.c" />
+    <ClCompile Include="zlib\inffast.c" />
+    <ClCompile Include="zlib\inflate.c" />
+    <ClCompile Include="zlib\inftrees.c" />
+    <ClCompile Include="zlib\trees.c" />
+    <ClCompile Include="zlib\uncompr.c" />
+    <ClCompile Include="zlib\zutil.c" />
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="CFToolbox.rc" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Account.h" />
+    <ClInclude Include="Accounts.h" />
+    <ClInclude Include="AppDescriptor.h" />
+    <ClInclude Include="AppIcons.h" />
+    <ClInclude Include="AppPropertiesPopup.h" />
+    <ClInclude Include="Bandwidth.h" />
+    <ClInclude Include="cdr.h" />
+    <ClInclude Include="CFDescriptor.h" />
+    <ClInclude Include="CFManager.h" />
+    <ClInclude Include="CFTBTabCtrl.h" />
+    <ClInclude Include="CFToolbox.h" />
+    <ClInclude Include="CFToolboxDlg.h" />
+    <ClInclude Include="CFToolbox_dll.h" />
+    <ClInclude Include="ChooseAccount.h" />
+    <ClInclude Include="config.h" />
+    <ClInclude Include="ConfigManager.h" />
+    <ClInclude Include="crypto.h" />
+    <ClInclude Include="CSClient.h" />
+    <ClInclude Include="Debug.h" />
+    <ClInclude Include="dictionary.h" />
+    <ClInclude Include="Download.h" />
+    <ClInclude Include="DownloadManager.h" />
+    <ClInclude Include="EnterPasswordDlg.h" />
+    <ClInclude Include="ExecutionAnalyser.h" />
+    <ClInclude Include="gcf.h" />
+    <ClInclude Include="HashMap.h" />
+    <ClInclude Include="HashMapStr.h" />
+    <ClInclude Include="HistogramCtrl.h" />
+    <ClInclude Include="iniparser.h" />
+    <ClInclude Include="LargeFile.h" />
+    <ClInclude Include="launcher.h" />
+    <ClInclude Include="Plugins.h" />
+    <ClInclude Include="ProgressPopup.h" />
+    <ClInclude Include="PropertiesPopup.h" />
+    <ClInclude Include="QuestionPopup.h" />
+    <ClInclude Include="Registry.h" />
+    <ClInclude Include="RegistryKey.h" />
+    <ClInclude Include="RegistryNode.h" />
+    <ClInclude Include="RegistryValue.h" />
+    <ClInclude Include="RegistryVector.h" />
+    <ClInclude Include="RegistryZip.h" />
+    <ClInclude Include="Resource.h" />
+    <ClInclude Include="Rijndael.h" />
+    <ClInclude Include="ServerRegistry.h" />
+    <ClInclude Include="SHA1.h" />
+    <ClInclude Include="socketTools.h" />
+    <ClInclude Include="SplitterBar.h" />
+    <ClInclude Include="StdAfx.h" />
+    <ClInclude Include="steamClient.h" />
+    <ClInclude Include="SteamNetwork.h" />
+    <ClInclude Include="strlib.h" />
+    <ClInclude Include="TabAdd.h" />
+    <ClInclude Include="TabApps.h" />
+    <ClInclude Include="TabBandwidth.h" />
+    <ClInclude Include="TabFiles.h" />
+    <ClInclude Include="TabHelp.h" />
+    <ClInclude Include="TabLogs.h" />
+    <ClInclude Include="TabPreferences.h" />
+    <ClInclude Include="Task.h" />
+    <ClInclude Include="TaskManager.h" />
+    <ClInclude Include="tga.h" />
+    <ClInclude Include="Thread.h" />
+    <ClInclude Include="Tools.h" />
+    <ClInclude Include="webbrowser2.h" />
+    <ClInclude Include="zlib\crc32.h" />
+    <ClInclude Include="zlib\deflate.h" />
+    <ClInclude Include="zlib\inffast.h" />
+    <ClInclude Include="zlib\inffixed.h" />
+    <ClInclude Include="zlib\inflate.h" />
+    <ClInclude Include="zlib\inftrees.h" />
+    <ClInclude Include="zlib\trees.h" />
+    <ClInclude Include="zlib\zconf.h" />
+    <ClInclude Include="zlib\zconf.in.h" />
+    <ClInclude Include="zlib\zlib.h" />
+    <ClInclude Include="zlib\zutil.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="res\bitmap1.bmp" />
+    <Image Include="res\CFToolbox.ico" />
+    <Image Include="res\empty.ico" />
+    <Image Include="res\ico00001.ico" />
+    <Image Include="res\ico00002.ico" />
+    <Image Include="res\icon1.ico" />
+    <Image Include="res\icon2.ico" />
+    <Image Include="res\icon3.ico" />
+    <Image Include="res\icon4.ico" />
+    <Image Include="res\SteamAppRebinder.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <CustomBuild Include="res\CFToolbox.rc2" />
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="ReadMe.txt" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

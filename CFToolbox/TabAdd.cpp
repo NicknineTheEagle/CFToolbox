@@ -254,7 +254,7 @@ void CTabAdd::refreshTab()
 	m_appsCtrl.DeleteAllItems();
 	ConfigManager conf;
 	
-	for (  ind=0;ind<getCDRNbApps(cdr);ind++)
+	for (int ind=0;ind<getCDRNbApps(cdr);ind++)
 	{
 		CDRApp app=getCDRAppAt(cdr,ind);
 		// filter on apps
@@ -540,7 +540,7 @@ void CTabAdd::OnAppClicked()
 	}
 	
 	// select files
-	for (  a=0;a<size;a++)
+	for (int a=0;a<size;a++)
 	{
 		if (selectedFiles->get(m_filesCtrl.GetItemData(a)))
 			m_filesCtrl.SetItemState(a, LVIS_SELECTED, LVIS_SELECTED | LVIS_FOCUSED);
@@ -678,7 +678,7 @@ void CTabAdd::OnAppContextualMenu(NMHDR* pNMHDR, LRESULT* pResult)
 						char sizeV[50];
 						char version[50];
 						char completion[50];
-						for ( ind=0;ind<appDescriptor->appGcfIdsCount;ind++)
+						for (int ind=0;ind<appDescriptor->appGcfIdsCount;ind++)
 						{
 							
 							char *p[4];
@@ -797,7 +797,7 @@ void CTabAdd::OnFileContextualMenu(NMHDR* pNMHDR, LRESULT* pResult)
 						strcpy(search,question.m_value.GetBuffer(0));
 						strlwr(search);
 					//	printDebug(DEBUG_LEVEL_TODO,"searching",search,0);
-						for ( a=0;a<size;a++)
+						for (int a=0;a<size;a++)
 						{
 							DWORD id=m_filesCtrl.GetItemData(a);
 							CDRApp ap=getCDRApp(cdr,id);

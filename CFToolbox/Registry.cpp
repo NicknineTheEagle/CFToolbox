@@ -132,7 +132,7 @@ unsigned long Registry::save(char * fileName, RegistryKey * root)
 	{
 		free(blob);
 		RUnlock();
-		throw exception("File error");
+		throw std::exception("File error");
 		return 0;
 	}	
 	// copy the file into the buffer.
@@ -192,12 +192,12 @@ unsigned long Registry::parseValue(char * valueBlob,RegistryValue * value)
 				case TYPE_STRING : /*printf("%s\n",valuea); */value->setString(nodeData);break;
 				case TYPE_DWORD :  /*printf("%d\n",valuea); */value->setDWORD(*(int*)nodeData);break;
 				case TYPE_DATA : /*hexaPrintf(valuea,node.dataLength);*/ value->setData(nodeData,node.dataLength);break;
-				default : throw exception("Invalid registry blob");
+				default : throw std::exception("Invalid registry blob");
 					
 				}
 				break;
 			}
-		default : throw exception("Invalid registry blob");
+		default : throw std::exception("Invalid registry blob");
 		}
 		readed+=node.dataLength;
 	}
@@ -274,7 +274,7 @@ unsigned long Registry::parseKeyContent(char * keyContent, RegistryKey * key)
 				readed+=parseValues(nodeData,key);
 				break;
 			}
-		default : throw exception("Invalid registry blob");
+		default : throw std::exception("Invalid registry blob");
 		}
 		
 		
@@ -363,7 +363,7 @@ unsigned long Registry::parseNodeHeader(NodeHeader * nodeHeader,const char * blo
 	memcpy(&(nodeHeader->magic),blob,2);
 	memcpy(&(nodeHeader->dataLength),(char *)((unsigned long)blob+2),4);
 	memcpy(&(nodeHeader->nullPadding),(char *)((unsigned long)blob+6),4);
-	if (nodeHeader->magic!=0x5001) throw exception("Invalid registry blob");
+	if (nodeHeader->magic!=0x5001) throw std::exception("Invalid registry blob");
 	//printf(">>>padding:%d\n",nodeHeader->nullPadding);
 	return 10;
 }
@@ -775,7 +775,7 @@ unsigned long Registry::zipBlob(char * blob,unsigned long blobSize, char ** zipp
 	uLongf maxZipSize=compressBound(blobSize);
 	char * zbuffer=(char*)malloc(maxZipSize);
 	int result=compress2((unsigned char*)zbuffer,&maxZipSize,(unsigned char*)blob,blobSize,Z_BEST_COMPRESSION);
-	if (result) throw exception("Zip error");
+	if (result) throw std::exception("Zip error");
 
 	ZipHeader header;
 	header.zipLength=maxZipSize;
@@ -795,7 +795,7 @@ unsigned long Registry::unzipBlob(char * zippedBlob,char ** blob)
 	*blob=(char*)malloc(header.blobLength);
 
 	int result=uncompress((unsigned char*)*blob,&header.blobLength,(unsigned char*)header.zData,(DWORD)header.zipLength);
-	if (result) throw exception("Unzip error");
+	if (result) throw std::exception("Unzip error");
 
 	return header.blobLength;
 }
@@ -827,7 +827,7 @@ unsigned long Registry::parseZipHeader(ZipHeader * zipHeader,char * blob)
 	memcpy(&(zipHeader->unknown),(char *)((unsigned long)blob+0x12),2);
 	zipHeader->zipLength-=0x14;
 	zipHeader->zData=blob+0x14;
-	if (zipHeader->magic!=0x4301) throw exception("Invalid zipped blob");
+	if (zipHeader->magic!=0x4301) throw std::exception("Invalid zipped blob");
 	//printf(">>>padding:%d\n",nodeHeader->nullPadding);
 	return 0x14;
 }

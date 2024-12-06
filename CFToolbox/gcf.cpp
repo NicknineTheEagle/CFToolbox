@@ -292,7 +292,7 @@ void printGCFChecksums(GCFChecksums * checksums,int full=0)
 	
 	nb=checksums->checksumCount;
 	if (!full && nb>3) nb=3;
-	for (ind=0;ind<nb;ind++)
+	for (int ind=0;ind<nb;ind++)
 	{
 		printf("      <checksum pos=\"%d\">#%x</checksum>\n",ind,checksums->checksum[ind]);
 	}
@@ -460,7 +460,7 @@ void printGCFDirectory(GCFDirectory * map,int full=0)
 	
 	nb=map->hashedFilesIndexSize;
 	if (!full && nb>3) nb=3;
-	for (ind=0;ind<nb;ind++)
+	for (int ind=0;ind<nb;ind++)
 	{
 		printf("      <hashedFilesIndex pos=\"%d\">#%x</hashedFilesIndex>\n",ind,map->hashedFilesIndex[ind]);
 	}
@@ -469,7 +469,7 @@ void printGCFDirectory(GCFDirectory * map,int full=0)
 	
 	nb=map->itemCount;
 	if (!full && nb>3) nb=3;
-	for (ind=0;ind<nb;ind++)
+	for (int ind=0;ind<nb;ind++)
 	{
 		printf("      <hashedFiles  pos=\"%d\">#%x</hashedFiles>\n",ind,map->hashedFiles[ind]);
 	}
@@ -478,7 +478,7 @@ void printGCFDirectory(GCFDirectory * map,int full=0)
 	
 	nb=map->copyCount;
 	if (!full && nb>3) nb=3;
-	for (ind=0;ind<nb;ind++)
+	for (int ind=0;ind<nb;ind++)
 	{
 		printf("      <copy pos=\"%d\">%d</copy>\n",ind,map->copyEntry[ind]);
 	}
@@ -487,7 +487,7 @@ void printGCFDirectory(GCFDirectory * map,int full=0)
 	
 	nb=map->localCount;
 	if (!full && nb>3) nb=3;
-	for (ind=0;ind<nb;ind++)
+	for (int ind=0;ind<nb;ind++)
 	{
 		printf("      <local pos=\"%d\">%d</local>\n",ind,map->localEntry[ind]);
 	}

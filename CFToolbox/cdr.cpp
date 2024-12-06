@@ -4,7 +4,7 @@ ContentDescriptionRecord getCDR(RegistryVector * vector)
 {
 	ContentDescriptionRecord cdr;
 	cdr.vector=vector;
-	cdr.version=vector->getNode((int)0)->getDwordDescription();
+	cdr.version=vector->getNode((DWORD)0)->getDwordDescription();
 	return cdr;
 }
 
