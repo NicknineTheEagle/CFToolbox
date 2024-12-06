@@ -1,0 +1,27 @@
+// Download.cpp: implementation of the CDownload class.
+//
+//////////////////////////////////////////////////////////////////////
+
+#include "stdafx.h"
+#include "CFToolbox.h"
+#include "Download.h"
+
+#ifdef _DEBUG
+#undef THIS_FILE
+static char THIS_FILE[]=__FILE__;
+#define new DEBUG_NEW
+#endif
+
+//////////////////////////////////////////////////////////////////////
+// Construction/Destruction
+//////////////////////////////////////////////////////////////////////
+
+CDownload::CDownload()
+{
+
+}
+
+CDownload::~CDownload()
+{
+
+}

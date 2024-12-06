@@ -1,0 +1,854 @@
+//Microsoft Developer Studio generated resource script.
+//
+#include "resource.h"
+
+#define APSTUDIO_READONLY_SYMBOLS
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 2 resource.
+//
+#include "afxres.h"
+
+/////////////////////////////////////////////////////////////////////////////
+#undef APSTUDIO_READONLY_SYMBOLS
+
+/////////////////////////////////////////////////////////////////////////////
+// Neutral resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_NEU)
+#ifdef _WIN32
+LANGUAGE LANG_NEUTRAL, SUBLANG_NEUTRAL
+#pragma code_page(1252)
+#endif //_WIN32
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Icon
+//
+
+// Icon with lowest ID value placed first to ensure application icon
+// remains consistent on all systems.
+IDR_MAINOTHME           ICON    DISCARDABLE     "res\\SteamAppRebinder.ico"
+#endif    // Neutral resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+/////////////////////////////////////////////////////////////////////////////
+// English (U.S.) resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENU)
+#ifdef _WIN32
+LANGUAGE LANG_ENGLISH, SUBLANG_ENGLISH_US
+#pragma code_page(1252)
+#endif //_WIN32
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog
+//
+
+IDD_ABOUTBOX DIALOG DISCARDABLE  0, 0, 235, 55
+STYLE DS_MODALOTHME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "About CF Toolbox"
+FONT 8, "MS Sans Serif"
+BEGIN
+    ICON            IDR_MAINOTHME,IDC_STATIC,11,17,20,20
+    LTEXT           "CF Toolbox Version 1.1.3",IDC_STATIC,40,10,119,8,
+                    SS_NOPREFIX
+    LTEXT           "Copyright (C) 2007",IDC_STATIC,40,25,119,8
+    DEFPUSHBUTTON   "OK",IDOK,178,7,50,14,BS_FLAT | WS_GROUP
+END
+
+IDD_CFTOOLBOX_DIALOG DIALOGEX 0, 0, 466, 380
+STYLE WS_MINIMIZEBOX | WS_MAXIMIZEBOX | WS_POPUP | WS_VISIBLE | WS_CAPTION | 
+    WS_SYSMENU | WS_THICKOTHME
+EXSTYLE WS_EX_APPWINDOW
+CAPTION "CF Toolbox 1.1.3 - by steamCooker"
+FONT 8, "MS Sans Serif"
+BEGIN
+    CONTROL         "Tab1",IDC_TAB,"SysTabControl32",TCS_TOOLTIPS,0,0,465,
+                    288
+    CONTROL         "List1",IDC_TASKS,"SysListView32",LVS_REPORT | WS_BORDER | 
+                    WS_TABSTOP,0,292,465,68
+    EDITTEXT        IDC_ACCOUNTS,4,364,456,16,ES_AUTOHSCROLL | ES_READONLY
+END
+
+IDD_ENTER_PASSWORD DIALOGEX 0, 0, 275, 68
+STYLE DS_MODALOTHME | DS_CENTER | WS_POPUP | WS_CAPTION | WS_SYSMENU
+EXSTYLE WS_EX_TOOLWINDOW
+CAPTION "Enter account password"
+FONT 8, "MS Sans Serif", 0, 0, 0x1
+BEGIN
+    EDITTEXT        IDC_PASSWORD,60,20,155,15,ES_PASSWORD | ES_AUTOHSCROLL
+    DEFPUSHBUTTON   "Login",IDOK,220,5,50,14,BS_FLAT
+    PUSHBUTTON      "Cancel",IDCANCEL,220,20,50,14,BS_FLAT
+    RTEXT           "Account name",IDC_STATIC,0,5,50,15,SS_CENTERIMAGE
+    RTEXT           "Password",IDC_STATIC,5,20,45,15,SS_CENTERIMAGE
+    EDITTEXT        IDC_ACCOUNT,60,5,155,15,ES_AUTOHSCROLL | ES_READONLY | 
+                    NOT WS_TABSTOP
+    CONTROL         "Remember my password / steam guard",IDC_SAVE_PASSWORD,
+                    "Button",BS_AUTOCHECKBOX | BS_FLAT | WS_TABSTOP,60,54,
+                    155,10
+    EDITTEXT        IDC_STEAMGUARD2,60,36,155,15,ES_PASSWORD | 
+                    ES_AUTOHSCROLL
+    RTEXT           "Steam guard",IDC_STATIC,6,36,45,15,SS_CENTERIMAGE
+END
+
+IDD_TAB_PREFERENCES DIALOG DISCARDABLE  0, 0, 600, 260
+STYLE WS_CHILD
+FONT 8, "MS Sans Serif"
+BEGIN
+    EDITTEXT        IDC_HOST,64,16,151,14,ES_AUTOHSCROLL
+    EDITTEXT        IDC_PORT,220,16,30,14,ES_AUTOHSCROLL | ES_NUMBER
+    PUSHBUTTON      "Set",IDC_SET,255,16,30,14,BS_FLAT
+    PUSHBUTTON      "Update Content Description Record",IDC_UPDATECDR,10,32,
+                    130,14,BS_FLAT
+    CONTROL         "Automatic update on startup",IDC_AUTOMATICUPDATE,"Button",
+                    BS_AUTOCHECKBOX | BS_FLAT | WS_TABSTOP,145,32,130,16
+    COMBOBOX        IDC_ACCOUNTS,10,66,240,95,CBS_DROPDOWNLIST | CBS_SORT | 
+                    WS_VSCROLL | WS_TABSTOP
+    PUSHBUTTON      "New",IDC_BUTTON6,255,64,30,14,BS_FLAT
+    PUSHBUTTON      "Delete",IDC_DELETE,255,84,30,14,BS_FLAT | WS_DISABLED
+    EDITTEXT        IDC_LOGIN,65,84,185,14,ES_AUTOHSCROLL | WS_DISABLED
+    EDITTEXT        IDC_PASSWORD,65,100,185,14,ES_PASSWORD | ES_AUTOHSCROLL | 
+                    WS_DISABLED
+    CONTROL         "Remember password / steam guard",IDC_REMEMBER,"Button",
+                    BS_AUTOCHECKBOX | BS_FLAT | WS_DISABLED | WS_TABSTOP,15,
+                    136,125,15
+    CONTROL         "Don't reset ticket on startup",IDC_NORESET,"Button",
+                    BS_AUTOCHECKBOX | BS_FLAT | NOT WS_VISIBLE | WS_DISABLED | 
+                    WS_TABSTOP,485,30,105,15
+    PUSHBUTTON      "Set / Connect",IDC_DO_LOGIN,230,137,55,14,BS_FLAT | 
+                    WS_DISABLED
+    EDITTEXT        IDC_GCF_PATH,65,167,185,12,ES_AUTOHSCROLL | ES_READONLY | 
+                    NOT WS_TABSTOP
+    PUSHBUTTON      "...",IDC_GCF_BROWSE,255,167,30,12,BS_FLAT
+    EDITTEXT        IDC_PATCH_PATH,65,183,185,12,ES_AUTOHSCROLL | 
+                    ES_READONLY | NOT WS_TABSTOP
+    PUSHBUTTON      "...",IDC_PATCH_BROWSE,255,183,30,12,BS_FLAT
+    EDITTEXT        IDC_FILECOMMAND,65,218,150,14,ES_LOWERCASE | 
+                    ES_AUTOHSCROLL
+    PUSHBUTTON      "Set",IDC_SET4,220,218,30,14,BS_FLAT
+    CONTROL         "Wait",IDC_WAIT_FILE,"Button",BS_AUTOCHECKBOX | BS_FLAT | 
+                    WS_TABSTOP,255,218,30,12
+    EDITTEXT        IDC_COMMAND,65,234,150,14,ES_LOWERCASE | ES_AUTOHSCROLL
+    PUSHBUTTON      "Set",IDC_SET3,220,234,30,14,BS_FLAT
+    CONTROL         "Wait",IDC_WAIT_APP,"Button",BS_AUTOCHECKBOX | BS_FLAT | 
+                    WS_TABSTOP,255,234,30,12
+    COMBOBOX        IDC_LANGUAGE,300,17,175,65,CBS_DROPDOWNLIST | CBS_SORT | 
+                    WS_VSCROLL | WS_TABSTOP
+    COMBOBOX        IDC_LEVEL,300,49,175,65,CBS_DROPDOWNLIST | WS_VSCROLL | 
+                    WS_TABSTOP
+    EDITTEXT        IDC_MAX_TASKS,300,80,60,14,ES_AUTOHSCROLL | ES_NUMBER
+    PUSHBUTTON      "Set",IDC_SET2,365,80,30,14,BS_FLAT
+    PUSHBUTTON      "Stop all tasks",IDC_STOP,400,80,75,14,BS_FLAT
+    CONTROL         "Pre-validate files before archive/update/download",
+                    IDC_VALIDATE_PATCHS,"Button",BS_AUTOCHECKBOX | BS_FLAT | 
+                    WS_TABSTOP,300,128,175,10
+    CONTROL         "Secured GCF/NCF files updates",IDC_SECURED,"Button",
+                    BS_AUTOCHECKBOX | BS_FLAT | WS_TABSTOP,300,140,117,10
+    CONTROL         "Sharing the Steam steamapps folder",IDC_SHARING,"Button",
+                    BS_AUTOCHECKBOX | BS_FLAT | WS_TABSTOP,300,152,129,10
+    CONTROL         "Show real bandwidth consumption",IDC_BANDWIDTH,"Button",
+                    BS_AUTOCHECKBOX | BS_FLAT | WS_TABSTOP,300,164,124,10
+    GROUPBOX        "Steam network",IDC_STATIC,5,4,285,48
+    RTEXT           "Config Server",IDC_STATIC,10,15,50,15,SS_CENTERIMAGE
+    GROUPBOX        "Accounts",IDC_STATIC,5,56,285,99
+    RTEXT           "Account name",IDC_STATIC,10,84,50,12,SS_CENTERIMAGE
+    RTEXT           "Password",IDC_STATIC,10,100,50,12,SS_CENTERIMAGE
+    GROUPBOX        "Folders",IDC_STATIC,5,156,285,48
+    GROUPBOX        "Logs level",IDC_STATIC,295,36,185,31
+    GROUPBOX        "Maximum active tasks",IDC_STATIC,295,68,185,32
+    RTEXT           "GCF / NCF",IDC_STATIC,20,167,40,12,SS_CENTERIMAGE
+    RTEXT           "Output",IDC_STATIC,10,183,50,12,SS_CENTERIMAGE
+    GROUPBOX        "Misc",IDC_STATIC,295,104,185,101
+    GROUPBOX        "Steam apps language",IDC_STATIC,295,4,185,31
+    GROUPBOX        "Batch command lines",IDC_STATIC,5,206,285,48
+    RTEXT           "G../M../T..",IDC_STATIC,10,234,50,12,SS_CENTERIMAGE
+    RTEXT           "GCF/NCF",IDC_STATIC,10,218,50,12,SS_CENTERIMAGE
+    PUSHBUTTON      "Kill all tasks",IDC_KILL,510,8,60,14,BS_FLAT | NOT 
+                    WS_VISIBLE
+    CONTROL         "reset MiniGCF content",IDC_MINI,"Button",
+                    BS_AUTOCHECKBOX | BS_FLAT | WS_TABSTOP,300,190,85,10
+    GROUPBOX        "On double click",IDC_STATIC,295,206,185,48
+    RTEXT           "G../M../T..",IDC_STATIC,300,234,35,12,SS_CENTERIMAGE
+    RTEXT           "GCF/NCF",IDC_STATIC,300,218,35,12,SS_CENTERIMAGE
+    COMBOBOX        IDC_FILE_DBLCLICK,340,218,135,148,CBS_DROPDOWNLIST | 
+                    CBS_SORT | WS_VSCROLL | WS_TABSTOP
+    COMBOBOX        IDC_APP_DBLCLICK,340,234,135,132,CBS_DROPDOWNLIST | 
+                    CBS_SORT | WS_VSCROLL | WS_TABSTOP
+    CONTROL         "Validate download streams",IDC_VALIDATE_DOWNLOADS,
+                    "Button",BS_AUTOCHECKBOX | BS_FLAT | WS_TABSTOP,300,116,
+                    175,10
+    CONTROL         "Accurate NCF completion",IDC_SECURED2,"Button",
+                    BS_AUTOCHECKBOX | BS_FLAT | WS_TABSTOP,385,190,90,10
+    CONTROL         "Disable install new apps tab",IDC_CHECK1,"Button",
+                    BS_AUTOCHECKBOX | BS_FLAT | WS_TABSTOP,300,177,103,10
+    PUSHBUTTON      "Disconnect",IDC_DO_DISCONNECT,150,137,75,14,BS_FLAT | 
+                    WS_DISABLED
+    EDITTEXT        IDC_STEAMGUARD,65,117,185,14,ES_PASSWORD | 
+                    ES_AUTOHSCROLL | WS_DISABLED
+    RTEXT           "Steam guard",IDC_STATIC,9,117,50,12,SS_CENTERIMAGE
+END
+
+IDD_QUESTION DIALOGEX 0, 0, 277, 39
+STYLE DS_MODALOTHME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+EXSTYLE WS_EX_TOOLWINDOW
+CAPTION "CF Toolbox"
+FONT 8, "MS Sans Serif", 0, 0, 0x1
+BEGIN
+    EDITTEXT        IDC_VALUE,5,20,210,14,ES_AUTOHSCROLL
+    DEFPUSHBUTTON   "OK",IDOK,220,4,50,14,BS_FLAT
+    PUSHBUTTON      "Cancel",IDCANCEL,220,20,50,14,BS_FLAT
+    LTEXT           "Question",IDC_Question,5,4,210,12,SS_CENTERIMAGE
+END
+
+IDD_TAB_ADD DIALOG DISCARDABLE  0, 0, 541, 300
+STYLE WS_CHILD
+FONT 8, "MS Sans Serif"
+BEGIN
+    CONTROL         "List2",IDC_APPS,"SysListView32",LVS_REPORT | 
+                    LVS_SHOWSELALWAYS | LVS_SORTASCENDING | 
+                    LVS_SHAREIMAGELISTS | WS_BORDER | WS_TABSTOP,10,16,465,
+                    88
+    CONTROL         "List2",IDC_FILES,"SysListView32",LVS_REPORT | 
+                    LVS_SHOWSELALWAYS | LVS_SORTASCENDING | LVS_NOSORTHEADER | 
+                    WS_BORDER | WS_TABSTOP,10,124,465,88
+    COMBOBOX        IDC_ACCOUNT_LIST,45,224,280,68,CBS_DROPDOWNLIST | 
+                    CBS_SORT | WS_VSCROLL | WS_TABSTOP
+    PUSHBUTTON      "Download the selected GCF/NCF files",IDC_DOWNLOAD,330,
+                    224,150,14,BS_FLAT
+    GROUPBOX        "Games/Media/Tools",IDC_GMTFRM,5,4,475,104
+    GROUPBOX        "GCF/NCF files",IDC_FILESFRM,5,112,475,104
+    RTEXT           "Account :",IDC_ACCLBL,5,224,35,12,SS_CENTERIMAGE
+END
+
+IDD_TAB_LOGS DIALOG DISCARDABLE  0, 0, 536, 228
+STYLE WS_CHILD
+FONT 8, "MS Sans Serif"
+BEGIN
+    EDITTEXT        IDC_LOGS,5,20,378,140,ES_MULTILINE | ES_READONLY | 
+                    WS_VSCROLL | WS_HSCROLL | NOT WS_TABSTOP
+    PUSHBUTTON      "Clear",IDC_CLEAR,5,4,40,12,BS_FLAT
+END
+
+IDD_PROGRESS DIALOGEX 0, 0, 212, 25
+STYLE DS_MODALOTHME | DS_CENTER | WS_POPUP | WS_VISIBLE | WS_CAPTION
+EXSTYLE WS_EX_TOOLWINDOW
+CAPTION "CF Toolbox - progress"
+FONT 8, "MS Sans Serif", 0, 0, 0x1
+BEGIN
+    LTEXT           "message",IDC_MESSAGE,5,4,195,8
+    CONTROL         "Progress1",IDC_PROGRESS,"msctls_progress32",0x0,5,16,
+                    200,6
+END
+
+IDD_TAB_FILES DIALOG DISCARDABLE  0, 0, 485, 212
+STYLE WS_CHILD
+FONT 8, "MS Sans Serif"
+BEGIN
+    CONTROL         "List1",IDC_FILES,"SysListView32",LVS_REPORT | 
+                    LVS_SORTASCENDING | LVS_AUTOARRANGE | WS_BORDER | 
+                    WS_TABSTOP,2,2,438,198
+END
+
+IDD_PROPERTIES DIALOGEX 0, 0, 282, 151
+STYLE DS_MODALOTHME | DS_SETFOREGROUND | DS_CENTER | WS_POPUP | WS_VISIBLE | 
+    WS_CAPTION | WS_SYSMENU
+EXSTYLE WS_EX_TOOLWINDOW
+CAPTION "GCF/NCF properties"
+FONT 8, "MS Sans Serif", 0, 0, 0x1
+BEGIN
+    EDITTEXT        IDC_PATH,5,4,270,12,ES_AUTOHSCROLL | ES_READONLY
+    EDITTEXT        IDC_DESCRIPTION,65,20,210,12,ES_AUTOHSCROLL | 
+                    ES_READONLY | NOT WS_BORDER
+    EDITTEXT        IDC_COMMONPATH,65,36,210,12,ES_AUTOHSCROLL | ES_READONLY | 
+                    NOT WS_BORDER
+    EDITTEXT        IDC_TYPE,65,52,85,12,ES_AUTOHSCROLL | ES_READONLY | NOT 
+                    WS_BORDER
+    EDITTEXT        IDC_CSIZE,195,52,85,12,ES_AUTOHSCROLL | ES_READONLY | 
+                    NOT WS_BORDER
+    EDITTEXT        IDC_ID,65,68,85,12,ES_AUTOHSCROLL | ES_READONLY | NOT 
+                    WS_BORDER
+    EDITTEXT        IDC_VERSION,195,68,85,12,ES_AUTOHSCROLL | ES_READONLY | 
+                    NOT WS_BORDER
+    EDITTEXT        IDC_COMPLETION,65,92,85,12,ES_AUTOHSCROLL | ES_READONLY | 
+                    NOT WS_BORDER
+    EDITTEXT        IDC_FILES,195,92,85,12,ES_AUTOHSCROLL | ES_READONLY | 
+                    NOT WS_BORDER
+    EDITTEXT        IDC_BLOCKS,65,108,85,12,ES_AUTOHSCROLL | ES_READONLY | 
+                    NOT WS_BORDER
+    EDITTEXT        IDC_FOLDERD,195,108,85,12,ES_AUTOHSCROLL | ES_READONLY | 
+                    NOT WS_BORDER
+    EDITTEXT        IDC_KEY,65,132,210,12,ES_AUTOHSCROLL | ES_READONLY | NOT 
+                    WS_BORDER
+    RTEXT           "Common path :",IDC_STATIC,5,36,55,12
+    RTEXT           "Cache type :",IDC_STATIC,5,52,55,12
+    RTEXT           "Cache ID :",IDC_STATIC,5,68,55,12
+    RTEXT           "Cache size :",IDC_STATIC,145,52,45,12
+    RTEXT           "Version :",IDC_STATIC,155,68,35,12
+    LTEXT           "_____________________________________________________________________",
+                    IDC_STATIC,5,76,270,16
+    RTEXT           "Completion :",IDC_STATIC,5,92,55,12
+    RTEXT           "Blocks usage :",IDC_STATIC,5,108,55,12
+    RTEXT           "Files :",IDC_STATIC,135,92,55,12
+    RTEXT           "Folders :",IDC_STATIC,135,108,55,12
+    LTEXT           "_____________________________________________________________________",
+                    IDC_STATIC,5,116,270,16
+    RTEXT           "Decryption key :",IDC_STATIC,5,132,55,12
+    RTEXT           "Description :",IDC_STATIC,5,20,55,12
+END
+
+IDD_TAB_APPS DIALOG DISCARDABLE  0, 0, 471, 216
+STYLE WS_CHILD
+FONT 8, "MS Sans Serif"
+BEGIN
+    CONTROL         "List1",IDC_APPS,"SysListView32",LVS_REPORT | 
+                    LVS_SORTASCENDING | LVS_SHAREIMAGELISTS | 
+                    LVS_AUTOARRANGE | WS_BORDER | WS_TABSTOP,2,2,438,198
+END
+
+IDD_APP_PROPERTIES DIALOGEX 0, 0, 287, 298
+STYLE DS_MODALOTHME | DS_CENTER | WS_POPUP | WS_VISIBLE | WS_CAPTION | 
+    WS_SYSMENU
+EXSTYLE WS_EX_TOOLWINDOW
+CAPTION "Game/Media/Tool properties"
+FONT 8, "MS Sans Serif", 0, 0, 0x1
+BEGIN
+    EDITTEXT        IDC_NAME,5,4,275,12,ES_AUTOHSCROLL | ES_READONLY
+    EDITTEXT        IDC_DEVELOPPER,65,36,215,12,ES_AUTOHSCROLL | ES_READONLY | 
+                    NOT WS_BORDER
+    EDITTEXT        IDC_MANUAL,65,52,215,12,ES_AUTOHSCROLL | ES_READONLY | 
+                    NOT WS_BORDER
+    EDITTEXT        IDC_ID,65,68,85,12,ES_AUTOHSCROLL | ES_READONLY | NOT 
+                    WS_BORDER
+    EDITTEXT        IDC_CSIZE,195,68,85,12,ES_AUTOHSCROLL | ES_READONLY | 
+                    NOT WS_BORDER
+    CONTROL         "List1",IDC_GCFS,"SysListView32",LVS_REPORT | 
+                    LVS_SINGLESEL | LVS_SORTASCENDING | LVS_AUTOARRANGE | 
+                    LVS_NOSORTHEADER | WS_BORDER | WS_TABSTOP,5,92,275,52
+    CONTROL         "List1",IDC_PROPERTIES,"SysListView32",LVS_REPORT | 
+                    LVS_SINGLESEL | LVS_SORTASCENDING | LVS_AUTOARRANGE | 
+                    LVS_NOSORTHEADER | WS_BORDER | WS_TABSTOP,5,160,275,52
+    RTEXT           "Developer :",IDC_STATIC,5,36,55,12
+    RTEXT           "Manual :",IDC_MANUALS,5,52,55,12
+    RTEXT           "App ID :",IDC_STATIC,5,68,55,12
+    RTEXT           "App size :",IDC_STATIC,145,68,45,12
+    LTEXT           "_____________________________________________________________________",
+                    IDC_STATIC,5,76,275,16
+    LTEXT           "_____________________________________________________________________",
+                    IDC_STATIC,5,144,275,16
+    CONTROL         "",IDC_EXPLORER1,"{8856F961-340A-11D0-A96B-00C04FD705A2}",
+                    WS_TABSTOP,5,228,275,68
+    LTEXT           "_____________________________________________________________________",
+                    IDC_STATIC,5,212,275,16
+    EDITTEXT        IDC_COMMON,65,20,215,12,ES_AUTOHSCROLL | ES_READONLY | 
+                    NOT WS_BORDER
+    RTEXT           "Common path :",IDC_STATIC,5,20,55,12
+END
+
+IDD_CHOOSE_ACCOUNT DIALOGEX 0, 0, 227, 71
+STYLE DS_MODALOTHME | DS_CENTER | WS_POPUP | WS_CAPTION | WS_SYSMENU
+EXSTYLE WS_EX_TOOLWINDOW
+CAPTION "Associate account with GCF/NCF"
+FONT 8, "MS Sans Serif", 0, 0, 0x1
+BEGIN
+    COMBOBOX        IDC_ACCOUNT_LIST,45,20,175,44,CBS_DROPDOWNLIST | 
+                    CBS_SORT | WS_VSCROLL | WS_TABSTOP
+    CONTROL         "Use this account for the other selected GCF/NCF",
+                    IDC_REMEMBER,"Button",BS_AUTOCHECKBOX | BS_FLAT | 
+                    WS_TABSTOP,45,36,175,10
+    DEFPUSHBUTTON   "OK",IDOK,115,52,50,14
+    PUSHBUTTON      "Cancel",IDCANCEL,170,52,50,14
+    EDITTEXT        IDC_FILE,45,4,175,14,ES_AUTOHSCROLL | ES_READONLY
+    RTEXT           "File :",IDC_STATIC,5,4,35,12,SS_CENTERIMAGE
+    RTEXT           "Account :",IDC_STATIC,5,20,35,12,SS_CENTERIMAGE
+END
+
+IDD_TAB_BANDWIDTH DIALOG DISCARDABLE  0, 0, 486, 244
+STYLE WS_CHILD
+FONT 8, "MS Sans Serif"
+BEGIN
+    COMBOBOX        IDC_COMBO1,5,4,475,104,CBS_DROPDOWNLIST | CBS_SORT | 
+                    WS_VSCROLL | WS_TABSTOP
+    EDITTEXT        IDC_MAX,375,44,100,14,ES_AUTOHSCROLL | ES_READONLY
+    EDITTEXT        IDC_CURRENT,375,60,100,14,ES_AUTOHSCROLL | ES_READONLY
+    EDITTEXT        IDC_MINIMUM,375,76,100,14,ES_AUTOHSCROLL | ES_READONLY
+    CONTROL         "",IDC_BANDWIDTH_GRAPH,"Static",SS_BLACKRECT,10,32,315,
+                    60
+    GROUPBOX        "Download speed",IDC_STATIC,5,20,475,76
+    RTEXT           "Maximum :",IDC_STATIC,330,44,40,12,SS_CENTERIMAGE
+    RTEXT           "Current :",IDC_STATIC,330,60,40,12,SS_CENTERIMAGE
+    RTEXT           "Minimum :",IDC_STATIC,330,76,40,12,SS_CENTERIMAGE
+    CONTROL         "",IDC_EXPLORER2,"{8856F961-340A-11D0-A96B-00C04FD705A2}",
+                    0x0,120,113,245,40
+    LTEXT           "",IDC_HIDER,350,113,15,40,NOT WS_GROUP
+    GROUPBOX        "Downloading from",IDC_FROM,5,100,475,56
+    EDITTEXT        IDC_REMAINING,375,28,100,14,ES_AUTOHSCROLL | ES_READONLY
+    RTEXT           "Remaining :",IDC_STATIC,330,28,40,12,SS_CENTERIMAGE
+END
+
+IDD_TAB_HELP DIALOG DISCARDABLE  0, 0, 185, 92
+STYLE WS_CHILD
+FONT 8, "MS Sans Serif"
+BEGIN
+    CONTROL         "",IDC_EXPLORER1,"{8856F961-340A-11D0-A96B-00C04FD705A2}",
+                    WS_TABSTOP,5,4,175,84
+    LTEXT           "Help not found",IDC_NOTFOUND,5,4,180,40
+END
+
+
+#ifndef _MAC
+/////////////////////////////////////////////////////////////////////////////
+//
+// Version
+//
+
+VS_VERSION_INFO VERSIONINFO
+ FILEVERSION 1,1,3,0
+ PRODUCTVERSION 1,1,3,0
+ FILEFLAGSMASK 0x3fL
+#ifdef _DEBUG
+ FILEFLAGS 0x1L
+#else
+ FILEFLAGS 0x0L
+#endif
+ FILEOS 0x4L
+ FILETYPE 0x1L
+ FILESUBTYPE 0x0L
+BEGIN
+    BLOCK "StringFileInfo"
+    BEGIN
+        BLOCK "040904b0"
+        BEGIN
+            VALUE "Comments", "\0"
+            VALUE "CompanyName", "\0"
+            VALUE "FileDescription", "CF Toolbox \0"
+            VALUE "FileVersion", "1, 1, 3, 0\0"
+            VALUE "InternalName", "CF Toolbox\0"
+            VALUE "LegalCopyright", "Copyright (C) 2007\0"
+            VALUE "LegalTrademarks", "\0"
+            VALUE "OriginalFilename", "CFToolbox.EXE\0"
+            VALUE "PrivateBuild", "\0"
+            VALUE "ProductName", "CF Toolbox\0"
+            VALUE "ProductVersion", "1, 1, 3, 0\0"
+            VALUE "SpecialBuild", "\0"
+        END
+    END
+    BLOCK "VarFileInfo"
+    BEGIN
+        VALUE "Translation", 0x409, 1200
+    END
+END
+
+#endif    // !_MAC
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// DESIGNINFO
+//
+
+#ifdef APSTUDIO_INVOKED
+GUIDELINES DESIGNINFO DISCARDABLE 
+BEGIN
+    IDD_ABOUTBOX, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 228
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 48
+    END
+
+    IDD_CFTOOLBOX_DIALOG, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 459
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 377
+    END
+
+    IDD_ENTER_PASSWORD, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 268
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 61
+    END
+
+    IDD_TAB_PREFERENCES, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 593
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 253
+    END
+
+    IDD_QUESTION, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 270
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 32
+    END
+
+    IDD_TAB_ADD, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 534
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 293
+    END
+
+    IDD_TAB_LOGS, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 529
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 221
+    END
+
+    IDD_PROGRESS, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 205
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 18
+    END
+
+    IDD_TAB_FILES, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 478
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 205
+    END
+
+    IDD_PROPERTIES, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 275
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 144
+    END
+
+    IDD_TAB_APPS, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 464
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 209
+    END
+
+    IDD_APP_PROPERTIES, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 280
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 291
+    END
+
+    IDD_CHOOSE_ACCOUNT, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 220
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 64
+    END
+
+    IDD_TAB_BANDWIDTH, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 479
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 237
+    END
+
+    IDD_TAB_HELP, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 178
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 85
+    END
+END
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog Info
+//
+
+IDD_TAB_BANDWIDTH DLGINIT
+BEGIN
+    IDC_EXPLORER2, 0x376, 160, 0
+0x0000, 0x0000, 0x004c, 0x0000, 0x2609, 0x0000, 0x06b8, 0x0000, 0x0000, 
+0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 
+0x0000, 0x0000, 0x004c, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0001, 
+0x0000, 0xd0e0, 0x0057, 0x3573, 0x11cf, 0x69ae, 0x0008, 0x2e2b, 0x6212, 
+0x0002, 0x0000, 0x0000, 0x0000, 0x004c, 0x0000, 0x1401, 0x0002, 0x0000, 
+0x0000, 0x00c0, 0x0000, 0x0000, 0x4600, 0x0080, 0x0000, 0x0000, 0x0000, 
+0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 
+0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0001, 0x0000, 
+0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 
+    0
+END
+
+IDD_APP_PROPERTIES DLGINIT
+BEGIN
+    IDC_EXPLORER1, 0x376, 160, 0
+0x0000, 0x0000, 0x004c, 0x0000, 0x2aaf, 0x0000, 0x0b79, 0x0000, 0x0000, 
+0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 
+0x0000, 0x0000, 0x004c, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0001, 
+0x0000, 0xd0e0, 0x0057, 0x3573, 0x11cf, 0x69ae, 0x0008, 0x2e2b, 0x6212, 
+0x0002, 0x0000, 0x0000, 0x0000, 0x004c, 0x0000, 0x1401, 0x0002, 0x0000, 
+0x0000, 0x00c0, 0x0000, 0x0000, 0x4600, 0x0080, 0x0000, 0x0000, 0x0000, 
+0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 
+0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0001, 0x0000, 
+0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 
+    0
+END
+
+IDD_TAB_HELP DLGINIT
+BEGIN
+    IDC_EXPLORER1, 0x376, 160, 0
+0x0000, 0x0000, 0x004c, 0x0000, 0x1b2f, 0x0000, 0x0e29, 0x0000, 0x0000, 
+0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 
+0x0000, 0x0000, 0x004c, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0001, 
+0x0000, 0xd0e0, 0x0057, 0x3573, 0x11cf, 0x69ae, 0x0008, 0x2e2b, 0x6212, 
+0x0002, 0x0000, 0x0000, 0x0000, 0x004c, 0x0000, 0x1401, 0x0002, 0x0000, 
+0x0000, 0x00c0, 0x0000, 0x0000, 0x4600, 0x0080, 0x0000, 0x0000, 0x0000, 
+0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 
+0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0001, 0x0000, 
+0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 
+    0
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Menu
+//
+
+IDR_FILES_MENU MENU DISCARDABLE 
+BEGIN
+    POPUP "root"
+    BEGIN
+        MENUITEM "Open",                        ID_ROOT_OPEN
+        MENUITEM "Run batch",                   ID_ROOT_RUN
+        MENUITEM "Copy",                        ID_ROOT_COPY
+        MENUITEM SEPARATOR
+        POPUP "Download"
+        BEGIN
+            MENUITEM "Account ...",                 ID_ROOT_ACCOUNT
+            MENUITEM "Resume",                      ID_ROOT_DOWNLOAD
+            MENUITEM "Pause",                       ID_ROOT_PAUSE_
+        END
+        POPUP "Patches"
+        BEGIN
+            MENUITEM "Make archive",                ID_ROOT_PATCHS_MAKEARCHIVE
+
+            MENUITEM "Make update",                 ID_ROOT_PATCHS_MAKEUPDATE
+
+            MENUITEM "Apply update",                ID_ROOT_PATCHS_APPLYUPDATE
+
+        END
+        MENUITEM SEPARATOR
+        MENUITEM "Stop task",                   ID_ROOT_CANCEL
+        MENUITEM "Validate",                    ID_ROOT_VALIDATE
+        MENUITEM "Correct",                     ID_ROOT_CORRECT
+        MENUITEM "Mini GCF",                    ID_ROOT_MINI
+        MENUITEM "Delete",                      ID_ROOT_DELETE
+        MENUITEM "Properties",                  ID_ROOT_PROPERTIES
+    END
+END
+
+IDR_APPS_MENU MENU DISCARDABLE 
+BEGIN
+    POPUP "root"
+    BEGIN
+        MENUITEM "Run batch",                   ID_ROOT_RUN
+        MENUITEM "Copy",                        ID_ROOT_COPY
+        MENUITEM SEPARATOR
+        POPUP "Download"
+        BEGIN
+            MENUITEM "Account ...",                 ID_ROOT_ACCOUNT
+            MENUITEM "Resume",                      ID_ROOT_DOWNLOAD
+            MENUITEM "Pause",                       ID_ROOT_PAUSE_
+        END
+        POPUP "Patches"
+        BEGIN
+            MENUITEM "Make archives",               ID_ROOT_PATCHS_MAKEARCHIVE
+
+            MENUITEM "Make updates",                ID_ROOT_PATCHS_MAKEUPDATE
+
+            MENUITEM "Apply updates",               ID_ROOT_PATCHS_APPLYUPDATE
+
+        END
+        MENUITEM SEPARATOR
+        MENUITEM "Stop tasks",                  ID_ROOT_CANCEL
+        MENUITEM "Validate",                    ID_ROOT_VALIDATE
+        MENUITEM "Correct",                     ID_ROOT_CORRECT
+        MENUITEM "Mini GCF",                    ID_ROOT_MINI
+        MENUITEM "Properties",                  ID_ROOT_PROPERTIES
+    END
+END
+
+IDR_TASKS_MENU MENU DISCARDABLE 
+BEGIN
+    POPUP "root"
+    BEGIN
+        MENUITEM "Stop task",                   ID_ROOT_CANCEL
+    END
+END
+
+IDR_ADDFILES_MENU MENU DISCARDABLE 
+BEGIN
+    POPUP "root"
+    BEGIN
+        MENUITEM "Run batch",                   ID_ROOT_RUN
+        MENUITEM "Select ...",                  ID_ROOT_SELECT
+        MENUITEM "Properties",                  ID_ROOT_PROPERTIES
+    END
+END
+
+IDR_ADDAPPS_MENU MENU DISCARDABLE 
+BEGIN
+    POPUP "root"
+    BEGIN
+        MENUITEM "Run batch",                   ID_ROOT_RUN
+        MENUITEM "Properties",                  ID_ROOT_PROPERTIES
+    END
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// String Table
+//
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    IDS_ABOUTBOX            "&About CF Toolbox..."
+    IDP_SOCKETS_INIT_FAILED "Windows sockets initialization failed."
+END
+
+#endif    // English (U.S.) resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+/////////////////////////////////////////////////////////////////////////////
+// Otherlang (Otherlang) resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_OTH)
+#ifdef _WIN32
+LANGUAGE LANG_OTHERLANG, SUBLANG_OTHERLANG
+#pragma code_page(1252)
+#endif //_WIN32
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Icon
+//
+
+// Icon with lowest ID value placed first to ensure application icon
+// remains consistent on all systems.
+IDR_ICON32              ICON    DISCARDABLE     "res\\CFToolbox.ico"
+IDI_EMPTY               ICON    DISCARDABLE     "res\\empty.ico"
+IDI_ICON2               ICON    DISCARDABLE     "res\\icon2.ico"
+IDI_ICON3               ICON    DISCARDABLE     "res\\icon3.ico"
+IDI_ICON4               ICON    DISCARDABLE     "res\\icon4.ico"
+
+#ifdef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// TEXTINCLUDE
+//
+
+1 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "resource.h\0"
+END
+
+2 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "#include ""afxres.h""\r\n"
+    "\0"
+END
+
+3 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "#define _AFX_NO_SPLITTER_RESOURCES\r\n"
+    "#define _AFX_NO_OLE_RESOURCES\r\n"
+    "#define _AFX_NO_TRACKER_RESOURCES\r\n"
+    "#define _AFX_NO_PROPERTY_RESOURCES\r\n"
+    "\r\n"
+    "#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENU)\r\n"
+    "#ifdef _WIN32\r\n"
+    "LANGUAGE 9, 1\r\n"
+    "#pragma code_page(1252)\r\n"
+    "#endif //_WIN32\r\n"
+    "#include ""res\\CFToolbox.rc2""  // non-Microsoft Visual C++ edited resources\r\n"
+    "#include ""afxres.rc""         // Standard components\r\n"
+    "#endif\r\n"
+    "\0"
+END
+
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Bitmap
+//
+
+IDB_BITMAP1             BITMAP  DISCARDABLE     "res\\bitmap1.bmp"
+#endif    // Otherlang (Otherlang) resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+/////////////////////////////////////////////////////////////////////////////
+// Neutral (Sys. Default) resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_NEUSD)
+#ifdef _WIN32
+LANGUAGE LANG_NEUTRAL, SUBLANG_SYS_DEFAULT
+#pragma code_page(1252)
+#endif //_WIN32
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Icon
+//
+
+// Icon with lowest ID value placed first to ensure application icon
+// remains consistent on all systems.
+IDR_ICON16              ICON    DISCARDABLE     "res\\icon1.ico"
+#endif    // Neutral (Sys. Default) resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+
+#ifndef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 3 resource.
+//
+#define _AFX_NO_SPLITTER_RESOURCES
+#define _AFX_NO_OLE_RESOURCES
+#define _AFX_NO_TRACKER_RESOURCES
+#define _AFX_NO_PROPERTY_RESOURCES
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENU)
+#ifdef _WIN32
+LANGUAGE 9, 1
+#pragma code_page(1252)
+#endif //_WIN32
+#include "res\CFToolbox.rc2"  // non-Microsoft Visual C++ edited resources
+#include "afxres.rc"         // Standard components
+#endif
+
+/////////////////////////////////////////////////////////////////////////////
+#endif    // not APSTUDIO_INVOKED
+
